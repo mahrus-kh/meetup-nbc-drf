@@ -7,3 +7,4 @@ python-slugify==2.0.1
 pytz==2018.9
 slugify==0.0.1
 Unidecode==1.0.23
+django-heroku==0.3.1
