@@ -8,6 +8,9 @@ class Category(models.Model):
         max_length=255, unique=True, null=False, blank=False)
     category = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.category
+
 class Article(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     category = models.ForeignKey(

@@ -51,9 +51,8 @@ class ArticleCreateView(generics.CreateAPIView):
         )
 
 
-class ArticleView(generics.RetrieveUpdateDestroyAPIView):
-
-    serializer_class = ArticleListSerializer
+class ArticleUpdateView(generics.UpdateAPIView):
+    serializer_class = ArticleSerializer
     queryset = Article.objects.all()
     lookup_field = 'slug'
 
@@ -61,3 +60,10 @@ class ArticleView(generics.RetrieveUpdateDestroyAPIView):
         serializer.save(
             slug = slugify(self.request.data.get('title'))
         )
+
+
+class ArticleView(generics.RetrieveDestroyAPIView):
+
+    serializer_class = ArticleListSerializer
+    queryset = Article.objects.all()
+    lookup_field = 'slug'
