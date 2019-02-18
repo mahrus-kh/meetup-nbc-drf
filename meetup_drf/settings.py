@@ -25,7 +25,7 @@ SECRET_KEY = '6&amm$rp-)0(h8v(6+437%f57l@dong_2ru9mkzivn_q+e_%da'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,14 +77,21 @@ WSGI_APPLICATION = 'meetup_drf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'meetup_drf',
+#         'USER': 'dev_mahrus',
+#         'PASSWORD': '007',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'meetup_drf',
-        'USER': 'dev_mahrus',
-        'PASSWORD': '007',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
