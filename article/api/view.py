@@ -14,17 +14,17 @@ class CategoryView(viewsets.ModelViewSet):
 
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
-    lookup_field = 'slug'
-
-    def perform_create(self, serializer):
-        serializer.save(
-            slug = slugify(self.request.data.get('category'))
-        )
-
-    def perform_update(self, serializer):
-        serializer.save(
-            slug = slugify(self.request.data.get('category'))
-        )
+    # lookup_field = 'slug'
+    #
+    # def perform_create(self, serializer):
+    #     serializer.save(
+    #         slug = slugify(self.request.data.get('category'))
+    #     )
+    #
+    # def perform_update(self, serializer):
+    #     serializer.save(
+    #         slug = slugify(self.request.data.get('category'))
+    #     )
 
 
 class CategoryArticlesView(generics.RetrieveAPIView):

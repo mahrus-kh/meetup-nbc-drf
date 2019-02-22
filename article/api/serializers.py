@@ -33,7 +33,7 @@ class ArticleListSerializer(ArticleSerializer):
 
 
 class CategoryArticlesSerializer(serializers.ModelSerializer):
-    list_article = ArticleSerializer(source='article_category', many=True)
+    article_category = ArticleSerializer(many=True)
 
     class Meta:
         model = Category
@@ -41,5 +41,5 @@ class CategoryArticlesSerializer(serializers.ModelSerializer):
             'pk',
             'slug',
             'category',
-            'list_article'
+            'article_category'
         )
